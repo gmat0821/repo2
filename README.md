@@ -1,4 +1,4 @@
-## 🗂️ Índice de Proyectos Genesis Mariana Aguilar Teran
+## 🗂️ Índice de Proyectos
 
 | # | Proyecto | Enlace al Directorio |
 |:---:|:---|:---|
@@ -7,7 +7,7 @@
 | **3** | **Ejercicio 03** | [📁 Ejercicio_03](Parcial/Ejercicio_03) |
 | **4** | **Ejercicio 04** | [📁 Ejercicio_04](Parcial/Ejercicio_04) |
 | **5** | **FitCalc** | [📁 fitCal](Parcial/fitCal) |
-| **6** | **Lista plana dinámica** | [📁 Lista plana dinámica](Parcial/Lista%20plana%20dinámica) |
+| **6** | **Lista plana dinámica** | [📁 DinamicFlatList](Parcial/DinamicFlatList) |
 | **7** | **Navegación de pila** | [📁 Navegación de pila](Parcial/Navegación%20de%20pila) |
 | **8** | **Navegación por pestañas** | [📁 Navegación por pestañas](Parcial/Navegación%20por%20pestañas) |
 | **9** | **Navegador de cajones** | [📁 Navegador de cajones](Parcial/Navegador%20de%20cajones) |
