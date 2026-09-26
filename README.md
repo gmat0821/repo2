@@ -12,7 +12,7 @@
 | **8** | **Navegación por pestañas** | [📁 Navegación por pestañas](Parcial/Navegación%20por%20pestañas) |
 | **9** | **Navegador de cajones** | [📁 Navegador de cajones](Parcial/Navegador%20de%20cajones) |
 | **10** | **Animado** | [📁 Animado](Parcial/Animado) |
-| **11** | **VidaGibran** | [📁 VidaGenesis](Parcial/VidaGenesis) |
+| **11** | **VidaGenesis** | [📁 VidaGenesis](Parcial/VidaGenesis) |
 | **12** | **Sensores** | [📁 Sensores](Parcial/Sensores) |
 | **13** | **Mapas** | [📁 Mapas](Parcial/Mapas) |
 | **14** | **ConsumeAPI_MongoDB** | [📁 Consumir API_MongoDB](Parcial/Consumir%20API_MongoDB) |
