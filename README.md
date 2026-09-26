@@ -1,4 +1,4 @@
-## 🗂️ Índice de Proyectos
+## 🗂️ Índice de Proyectos Genesis Mariana Aguilar Teran
 
 | # | Proyecto | Enlace al Directorio |
 |:---:|:---|:---|
@@ -6,13 +6,13 @@
 | **2** | **Ejemplo 02** | [📁 Ejemplo_02](Parcial/Ejemplo_02) |
 | **3** | **Ejercicio 03** | [📁 Ejercicio_03](Parcial/Ejercicio_03) |
 | **4** | **Ejercicio 04** | [📁 Ejercicio_04](Parcial/Ejercicio_04) |
-| **5** | **FitCalc** | [📁 fitCal](Parcial/fitCal) |
-| **6** | **Lista plana dinámica** | [📁 DinamicFlatList](Parcial/DinamicFlatList) |
-| **7** | **Navegación de pila** | [📁 Navegación de pila](Parcial/Navegación%20de%20pila) |
-| **8** | **Navegación por pestañas** | [📁 Navegación por pestañas](Parcial/Navegación%20por%20pestañas) |
-| **9** | **Navegador de cajones** | [📁 Navegador de cajones](Parcial/Navegador%20de%20cajones) |
-| **10** | **Animado** | [📁 Animado](Parcial/Animado) |
+| **5** | **fitCal** | [📁 fitCal](Parcial/fitCal) |
+| **6** | **DinamicFlatList** | [📁 DinamicFlatList](Parcial/DinamicFlatList) |
+| **7** | **StackNavigation** | [📁 StackNavigation](Parcial/StackNavigation) |
+| **8** | **TabNavigation** | [📁 TabNavigation](Parcial/TabNavigation) |
+| **9** | **drawerNavigator** | [📁 drawerNavigator](Parcial/drawerNavigator) |
+| **10** | **Animated** | [📁 Animated](Parcial/Animated) |
 | **11** | **VidaGenesis** | [📁 VidaGenesis](Parcial/VidaGenesis) |
 | **12** | **Sensores** | [📁 Sensores](Parcial/Sensores) |
 | **13** | **Mapas** | [📁 Mapas](Parcial/Mapas) |
-| **14** | **ConsumeAPI_MongoDB** | [📁 Consumir API_MongoDB](Parcial/Consumir%20API_MongoDB) |
+| **14** | **ConsumeAPI_MongoDB** | [📁 ConsumeAPI_MongoDB](Parcial/ConsumeAPI_MongoDB) |
