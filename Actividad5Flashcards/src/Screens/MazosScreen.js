@@ -9,6 +9,9 @@ export default function MazosScreen({ mazos, setMazos }) {
   const [respuesta, setRespuesta] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState(null);
+  
+  // Nuevo estado para la pantalla de confirmación
+  const [mazoAEliminar, setMazoAEliminar] = useState(null);
 
   const agregarMazo = () => {
     if (nombreMazo !== '') {
@@ -34,6 +37,32 @@ export default function MazosScreen({ mazos, setMazos }) {
     }
   };
 
+  const confirmarEliminacion = () => {
+    const nuevosMazos = mazos.filter(m => m.id !== mazoAEliminar.id);
+    setMazos(nuevosMazos);
+    setMazoAEliminar(null);
+  };
+
+  // Pantalla de confirmación para eliminar mazo
+  if (mazoAEliminar) {
+    return (
+      <View style={styles.containerCenter}>
+        <Text style={styles.emojiTriste}>(╥﹏╥)</Text>
+        <Text style={styles.header}>¿Te gustaría eliminar el mazo?</Text>
+        <Text style={styles.headerTitle}>"{mazoAEliminar.nombre}"</Text>
+        
+        <View style={styles.botonesFinales}>
+          <View style={styles.btnContainer}>
+            <Button title="Sí, eliminar 🗑️" onPress={confirmarEliminacion} color="#BA5A5A" />
+          </View>
+          <View style={[styles.btnContainer, { marginTop: 15 }]}>
+            <Button title="Cancelar ❌" onPress={() => setMazoAEliminar(null)} color="#86BCBD" />
+          </View>
+        </View>
+      </View>
+    );
+  }
+
   if (!mazoActivo) {
     return (
       <View style={styles.container}>
@@ -51,8 +80,17 @@ export default function MazosScreen({ mazos, setMazos }) {
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.card} onPress={() => setMazoActivo(item)}>
-              <Text style={styles.title}>📘 {item.nombre}</Text>
-              <Text style={styles.subtitle}>🗂️ {item.tarjetas.length} tarjetas</Text>
+              <View style={styles.cardContent}>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.title}>📘 {item.nombre}</Text>
+                  <Text style={styles.subtitle}>🗂️ {item.tarjetas.length} tarjetas</Text>
+                </View>
+                
+                {/* Botón de basura añadido aquí */}
+                <TouchableOpacity onPress={() => setMazoAEliminar(item)} style={styles.deleteBtn}>
+                  <Text style={styles.deleteIcon}>🗑️</Text>
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           )}
         />
@@ -97,12 +135,23 @@ export default function MazosScreen({ mazos, setMazos }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F7E49B', padding: 20 },
+  // Nuevos estilos para la pantalla de confirmación (basados en EstudioScreen)
+  containerCenter: { flex: 1, backgroundColor: '#F7E49B', padding: 20, justifyContent: 'center', alignItems: 'center' },
+  emojiTriste: { fontSize: 50, marginBottom: 15, color: '#BA5A5A' },
+  botonesFinales: { width: '85%', marginTop: 30 },
+  
   formCard: { backgroundColor: 'white', padding: 20, borderRadius: 15, elevation: 5, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, marginBottom: 20 },
   header: { fontSize: 20, fontWeight: "bold", marginBottom: 15, color: "#86BCBD", textAlign: 'center' },
   headerTitle: { fontSize: 22, fontWeight: "bold", marginVertical: 10, color: "#BA5A5A", textAlign: 'center' },
   input: { borderWidth: 2, borderColor: '#F7E49B', backgroundColor: '#fff', borderRadius: 10, padding: 12, marginBottom: 15, fontSize: 16 },
   btnContainer: { borderRadius: 10, overflow: 'hidden' },
   card: { backgroundColor: "white", padding: 20, marginVertical: 8, borderRadius: 15, borderLeftWidth: 6, borderLeftColor: '#86BCBD', elevation: 3 },
+  
+  // Nuevos estilos para organizar el texto y el botón del basurero
+  cardContent: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  deleteBtn: { padding: 10, backgroundColor: '#FFF0F0', borderRadius: 50, borderWidth: 2, borderColor: '#BA5A5A' },
+  deleteIcon: { fontSize: 22 },
+  
   title: { fontSize: 18, fontWeight: "bold", color: "#333" },
   subtitle: { fontSize: 14, color: "gray", marginTop: 8 }
 });
