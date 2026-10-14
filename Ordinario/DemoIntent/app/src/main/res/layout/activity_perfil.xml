@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    tools:context=".PerfilActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actividad 3: Perfil"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuario Extra: "
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvExtraAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ES_ADMIN Extra: "
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Funcionalidad: Gestión de Nombre y Permisos"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etNombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del usuario"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modo Administrador"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnActualizarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar Perfil"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/tvAccionesPermitidas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Permisos asignados..."
+        android:textSize="15sp"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnVolverPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regresar" />
+
+</LinearLayout>

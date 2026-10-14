@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoIntent</string>
+    <string name="extra_recibido">Extra recibido: \"%1$s\"</string>
+    <string name="numero_recibido">Número base recibido: %1$d</string>
+    <string name="usuario_recibido">Usuario Extra: %1$s</string>
+    <string name="admin_recibido">ES_ADMIN Extra: %1$s</string>
+</resources>
