@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Fragmentado</string>
+    <string name="app_header_title">Navegación de Fragmentos</string>
+    <string name="tab_stats">📊 Stats</string>
+    <string name="tab_music">🎵 Música</string>
+    <string name="tab_quiz">📝 Encuesta</string>
+
+    <!-- Stats Fragment Strings -->
+    <string name="stats_title">⚡ Panel de Control y Puntos</string>
+    <string name="stats_subtitle">Fragmento 1: Contador Dinámico</string>
+    <string name="stats_score_label">PUNTOS ACUMULADOS</string>
+    <string name="stats_reset">Reiniciar</string>
+    <string name="stats_btn_plus">+</string>
+    <string name="stats_btn_minus">-</string>
+    <string name="stats_rank_novice">Rango: Novato 🥉</string>
+    <string name="stats_rank_advanced">Rango: Avanzado 🥈</string>
+    <string name="stats_rank_expert">Rango: Leyenda 🥇</string>
+
+    <!-- Music Fragment Strings -->
+    <string name="music_fragment_title">REPRODUCTOR MULTIMEDIA</string>
+    <string name="status_paused">⏸ PAUSADO</string>
+    <string name="status_playing">▶ REPRODUCIENDO</string>
+    <string name="song_title_1">Neon Horizon</string>
+    <string name="song_artist_1">Synthwave Beats Studio</string>
+    <string name="icon_album">🎧</string>
+    <string name="time_initial">01:15</string>
+    <string name="time_total">03:40</string>
+    <string name="btn_prev_text">⏮</string>
+    <string name="btn_play_text">▶</string>
+    <string name="btn_pause_text">⏸</string>
+    <string name="btn_next_text">⏭</string>
+    <string name="effect_off">🔊 Refuerzo de Graves: DESACTIVADO</string>
+    <string name="effect_on">🔊 Refuerzo de Graves: ACTIVADO ✨</string>
+
+    <!-- Quiz Fragment Strings -->
+    <string name="quiz_title">📋 Encuesta de Satisfacción</string>
+    <string name="quiz_question">¿Cómo evalúas la fluidez de esta aplicación?</string>
+    <string name="quiz_opt1">🚀 Excelente y muy fluida</string>
+    <string name="quiz_opt2">👍 Buena, pero con detalles</string>
+    <string name="quiz_opt3">💡 Requiere más características</string>
+    <string name="quiz_comment_hint">Escribe un comentario u opinión...</string>
+    <string name="quiz_submit_btn">Enviar Encuesta</string>
+    <string name="quiz_result_header">✅ ¡Respuesta Registrada!</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme Base Colors -->
+    <color name="bg_main">#F3F4F6</color>
+    <color name="primary_purple">#6C5CE7</color>
+    <color name="primary_purple_dark">#4834D4</color>
+
+    <!-- Button colors for distinctive tabs -->
+    <color name="btn_stats_color">#F59E0B</color>
+    <color name="btn_music_color">#10B981</color>
+    <color name="btn_quiz_color">#6C5CE7</color>
+
+    <!-- Fragment 1: Stats Colors (Orange Theme) -->
+    <color name="stats_primary">#F59E0B</color>
+    <color name="stats_primary_dark">#D97706</color>
+    <color name="stats_card_bg">#ffffff</color>
+    <color name="stats_accent">#FEF3C7</color>
+    <color name="stats_text_dark">#92400E</color>
+
+    <!-- Fragment 2: Music Colors (Green Theme) -->
+    <color name="music_bg">#111827</color>
+    <color name="music_card_bg">#1F2937</color>
+    <color name="music_accent">#10B981</color>
+    <color name="music_text_light">#F9FAFB</color>
+
+    <!-- Fragment 3: Quiz Colors (Purple Theme) -->
+    <color name="quiz_primary">#6C5CE7</color>
+    <color name="quiz_primary_dark">#4834D4</color>
+    <color name="quiz_card_bg">#FFFFFF</color>
+    <color name="quiz_accent">#6C5CE7</color>
+    <color name="quiz_accent_dark">#4834D4</color>
+    <color name="quiz_result_bg">#EDE9FE</color>
+</resources>
