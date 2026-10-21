@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".FrameLayoutActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ejemplo: FrameLayout"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="Permite superponer elementos en capas (Z-index). El último elemento definido se dibuja arriba."
+        android:textSize="13sp" />
+
+    <!-- FrameLayout demostrativo -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="#ECEFF1">
+
+        <!-- Capa 1 (Fondo grande) -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#26A69A" />
+
+        <!-- Capa 2 (Cuadro intermedio en el centro) -->
+        <View
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:background="#00796B" />
+
+        <!-- Capa 3 (Texto en el centro superpuesto) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Texto Superpuesto\n(Capa Superior)"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Capa 4 (Insignia / Badge en la esquina superior derecha) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="16dp"
+            android:background="#FF5252"
+            android:padding="8dp"
+            android:text="NUEVO"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Capa 5 (Botón flotante en la esquina inferior derecha) -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:text="Acción" />
+
+        <!-- Capa 6 (Etiqueta en la esquina inferior izquierda) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="16dp"
+            android:background="#80000000"
+            android:padding="6dp"
+            android:text="Capa 0: Fondo\nCapa 1: Cuadro verde\nCapa 2: Textos/Botón"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+    </FrameLayout>
+
+</LinearLayout>

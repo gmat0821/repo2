@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".RelativeLayoutActivity">
+
+    <!-- Título superior -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Ejemplo: RelativeLayout"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="4dp"
+        android:text="Posiciona elementos según referencias al padre o a vistas hermanas:"
+        android:textSize="13sp" />
+
+    <!-- Elemento en el centro -->
+    <Button
+        android:id="@+id/btnCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Centro\n(centerInParent)" />
+
+    <!-- Elemento arriba del centro -->
+    <TextView
+        android:id="@+id/tvAboveCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnCenter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="#FFF9C4"
+        android:padding="8dp"
+        android:text="Arriba del botón\n(layout_above)"
+        android:textColor="#F57F17" />
+
+    <!-- Elemento a la izquierda del centro -->
+    <TextView
+        android:id="@+id/tvLeftOfCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@id/btnCenter"
+        android:background="#E1BEE7"
+        android:padding="8dp"
+        android:text="Izquierda\n(toStartOf)"
+        android:textColor="#4A148C" />
+
+    <!-- Elemento a la derecha del centro -->
+    <TextView
+        android:id="@+id/tvRightOfCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@id/btnCenter"
+        android:background="#C8E6C9"
+        android:padding="8dp"
+        android:text="Derecha\n(toEndOf)"
+        android:textColor="#1B5E20" />
+
+    <!-- Elemento debajo del centro -->
+    <TextView
+        android:id="@+id/tvBelowCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCenter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="#FFCCBC"
+        android:padding="8dp"
+        android:text="Debajo del botón\n(layout_below)"
+        android:textColor="#BF360C" />
+
+    <!-- Elemento en la esquina inferior derecha -->
+    <TextView
+        android:id="@+id/tvBottomRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#D1C4E9"
+        android:padding="10dp"
+        android:text="Esquina Inferior\n(alignParentBottom/End)"
+        android:textColor="#311B92" />
+
+</RelativeLayout>

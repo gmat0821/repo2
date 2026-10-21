@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".TableLayoutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejemplo: TableLayout"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="Organiza elementos en filas (TableRow) y columnas. Ideal para formularios estructurados."
+            android:textSize="13sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:padding="12dp"
+            android:stretchColumns="1">
+
+            <!-- Encabezado de la Tabla -->
+            <TableRow android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_span="2"
+                    android:gravity="center"
+                    android:text="Formulario de Registro"
+                    android:textColor="#1976D2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <!-- Fila 1: Nombre -->
+            <TableRow android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:text="Nombre:"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="Ingrese su nombre"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <!-- Fila 2: Correo -->
+            <TableRow android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:text="Correo:"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="ejemplo@correo.com"
+                    android:inputType="textEmailAddress" />
+            </TableRow>
+
+            <!-- Fila 3: Contraseña -->
+            <TableRow android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:text="Contraseña:"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="******"
+                    android:inputType="textPassword" />
+            </TableRow>
+
+            <!-- Fila 4: Teléfono -->
+            <TableRow android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:text="Teléfono:"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="+57 300 000 0000"
+                    android:inputType="phone" />
+            </TableRow>
+
+            <!-- Fila 5: Botón Guardar ocupando 2 columnas -->
+            <TableRow android:layout_marginTop="8dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:padding="10dp"
+                    android:text="Enviar Formulario" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>
