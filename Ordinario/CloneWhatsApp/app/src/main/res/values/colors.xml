@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="kakao_dark">#071B2B</color>
+    <color name="kakao_teal">#167D8D</color>
+    <color name="kakao_light_teal">#B9E4E8</color>
+    <color name="kakao_bg">#EEEEEE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_dark">#071B2B</color>
+    <color name="text_muted">#666666</color>
 </resources>

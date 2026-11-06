@@ -28,6 +28,10 @@ public class SessionManager {
         return pref.getString(KEY_TOKEN, null);
     }
 
+    public String getUserId() {
+        return pref.getString(KEY_USER_ID, "");
+    }
+
     public String getEmail() {
         return pref.getString(KEY_EMAIL, "");
     }
