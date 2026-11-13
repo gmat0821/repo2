@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="28dp"
     android:gravity="center"
-    android:background="@color/kakao_bg">
+    android:background="@color/chiikawa_bg">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_chiikawa_logo"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +20,7 @@
         android:text="Crear Cuenta"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="@color/kakao_dark"
+        android:textColor="@color/chiikawa_text_dark"
         android:layout_marginBottom="32dp"/>
 
     <EditText
@@ -21,9 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:hint="Correo Electrónico"
+        android:textColor="@color/chiikawa_text_dark"
+        android:textColorHint="@color/chiikawa_text_muted"
         android:background="@drawable/bg_rounded_input"
         android:paddingHorizontal="16dp"
         android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"
         android:layout_marginBottom="14dp"/>
 
     <EditText
@@ -31,16 +41,20 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:hint="Contraseña (mínimo 6 caracteres)"
+        android:textColor="@color/chiikawa_text_dark"
+        android:textColorHint="@color/chiikawa_text_muted"
         android:background="@drawable/bg_rounded_input"
         android:paddingHorizontal="16dp"
         android:inputType="textPassword"
+        android:autofillHints="password"
         android:layout_marginBottom="24dp"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:background="@drawable/bg_button_teal"
+        app:backgroundTint="@null"
         android:text="Registrarse"
         android:textColor="@color/white"
         android:textStyle="bold"

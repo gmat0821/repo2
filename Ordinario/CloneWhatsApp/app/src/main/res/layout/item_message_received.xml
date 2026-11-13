@@ -11,15 +11,59 @@
         android:background="@drawable/bg_bubble_received"
         android:orientation="vertical"
         android:padding="10dp"
-        android:maxWidth="260dp">
+        android:maxWidth="280dp">
 
         <TextView
             android:id="@+id/tvReceivedContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Respuesta"
+            android:text="Mensaje recibido"
             android:textSize="14sp"
-            android:textColor="@color/kakao_dark"/>
+            android:textColor="@color/chiikawa_text_dark"/>
+
+        <!-- Reproductor Intuitivo de Nota de Voz Estilo IG/WhatsApp -->
+        <LinearLayout
+            android:id="@+id/layoutAudioReceived"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/btnPlayAudioRecv"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/bg_button_teal"
+                android:src="@android:drawable/ic_media_play"
+                android:contentDescription="Reproducir audio"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
+
+                <SeekBar
+                    android:id="@+id/seekBarAudioRecv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:progressTint="@color/chiikawa_accent"
+                    android:thumbTint="@color/chiikawa_accent"/>
+
+                <TextView
+                    android:id="@+id/tvAudioDurationRecv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎙️ Nota de voz"
+                    android:textSize="11sp"
+                    android:textColor="@color/chiikawa_text_muted"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvReceivedTime"
@@ -28,7 +72,7 @@
             android:layout_gravity="end"
             android:text="10:00"
             android:textSize="10sp"
-            android:textColor="@color/text_muted"
+            android:textColor="@color/chiikawa_text_muted"
             android:layout_marginTop="2dp"/>
     </LinearLayout>
 

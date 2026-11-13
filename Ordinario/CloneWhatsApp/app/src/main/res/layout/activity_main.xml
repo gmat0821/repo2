@@ -3,42 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/kakao_bg">
+    android:background="@color/chiikawa_bg">
 
-    <!-- Header KakaoTalk Header -->
+    <!-- Header Chiikawa -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/kakao_dark"
+        android:layout_height="64dp"
+        android:background="@color/chiikawa_header"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_chiikawa_logo"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Chats"
+            android:text="WhatsApp Chiikawa"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"/>
 
+        <!-- Botón de 3 Puntos (Menú Opciones) -->
         <TextView
-            android:id="@+id/btnMainProfile"
+            android:id="@+id/btnMenuMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:textColor="@color/kakao_light_teal"
-            android:textSize="15sp"
-            android:padding="8dp"/>
-
-        <TextView
-            android:id="@+id/btnMainLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Salir"
-            android:textColor="#FF6B6B"
-            android:textSize="15sp"
+            android:text="⋮"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
             android:padding="8dp"/>
     </LinearLayout>
 
@@ -47,7 +46,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNewChat"
             android:layout_width="match_parent"
             android:layout_height="48dp"

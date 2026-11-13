@@ -13,7 +13,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher_round"/>
+        android:src="@drawable/ic_chiikawa_logo"/>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -29,7 +29,7 @@
             android:text="Nombre"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/kakao_dark"/>
+            android:textColor="@color/chiikawa_text_dark"/>
 
         <TextView
             android:id="@+id/tvLastMessage"
@@ -39,7 +39,7 @@
             android:textSize="13sp"
             android:maxLines="1"
             android:ellipsize="end"
-            android:textColor="@color/text_muted"
+            android:textColor="@color/chiikawa_text_muted"
             android:layout_marginTop="2dp"/>
     </LinearLayout>
 
@@ -49,6 +49,6 @@
         android:layout_height="wrap_content"
         android:text="12:00"
         android:textSize="11sp"
-        android:textColor="@color/text_muted"/>
+        android:textColor="@color/chiikawa_text_muted"/>
 
 </LinearLayout>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/kakao_light_teal"/>
+    <solid android:color="@color/chiikawa_bubble_sent"/>
     <corners
-        android:topLeftRadius="16dp"
+        android:topLeftRadius="18dp"
         android:topRightRadius="4dp"
-        android:bottomLeftRadius="16dp"
-        android:bottomRightRadius="16dp"/>
+        android:bottomLeftRadius="18dp"
+        android:bottomRightRadius="18dp"/>
 </shape>

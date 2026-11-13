@@ -4,19 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/kakao_bg">
+    android:background="@color/chiikawa_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/kakao_dark"
+        android:background="@color/chiikawa_header"
         android:gravity="center_vertical"
         android:paddingHorizontal="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mi Perfil Kakao"
+            android:text="Mi Perfil Chiikawa"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -31,12 +31,23 @@
 
         <ImageView
             android:id="@+id/imgProfileAvatar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher_round"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="Foto"/>
+            android:src="@drawable/ic_chiikawa_logo"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Foto de Perfil"/>
+
+        <TextView
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📷 Cambiar foto desde el teléfono"
+            android:textColor="@color/chiikawa_accent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"/>
 
         <EditText
             android:id="@+id/etFullName"
@@ -46,19 +57,21 @@
             android:background="@drawable/bg_rounded_input"
             android:paddingHorizontal="16dp"
             android:inputType="textPersonName"
+            android:textColor="@color/chiikawa_text_dark"
             android:layout_marginBottom="14dp"/>
 
         <EditText
             android:id="@+id/etAvatarUrl"
             android:layout_width="match_parent"
             android:layout_height="46dp"
-            android:hint="URL de la Fotografía"
+            android:hint="URL de la Fotografía (o subida)"
             android:background="@drawable/bg_rounded_input"
             android:paddingHorizontal="16dp"
             android:inputType="textUri"
+            android:textColor="@color/chiikawa_text_dark"
             android:layout_marginBottom="24dp"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSaveProfile"
             android:layout_width="match_parent"
             android:layout_height="46dp"

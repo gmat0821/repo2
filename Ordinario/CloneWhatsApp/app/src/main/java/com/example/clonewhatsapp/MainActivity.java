@@ -1,136 +1,93 @@
-package com.example.clonewhatsapp;
+package com.example.clonewhatsapp.api;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.clonewhatsapp.adapters.ConversationAdapter;
-import com.example.clonewhatsapp.api.SupabaseClient;
-import com.example.clonewhatsapp.models.Conversation;
-import com.example.clonewhatsapp.utils.SessionManager;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
-import org.json.JSONArray;
+import android.net.Uri;
 import org.json.JSONObject;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import okhttp3.*;
 
-public class MainActivity extends AppCompatActivity {
+public class SupabaseClient {
+    // Reemplaza estos valores con los de tu proyecto en Supabase (Settings -> API)
+    private static final String SUPABASE_URL = "https://oeolmcbcrrlxvtrjslaf.supabase.co";
+    private static final String SUPABASE_KEY = "sb_publishable_v4-xxudTAZQlR75C8Y-Ehw_HEQgk-uq";
 
-    private SessionManager sessionManager;
-    private ConversationAdapter adapter;
-    private List<Conversation> conversationList;
+    private static final OkHttpClient client = new OkHttpClient();
+    private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    // --- MÉTODO BASE PARA PETICIONES HTTP ---
+    private static void req(String method, String path, String token, String body, Callback cb) {
+        Request.Builder b = new Request.Builder()
+                .url(SUPABASE_URL + path)
+                .addHeader("apikey", SUPABASE_KEY)
+                .addHeader("Authorization", "Bearer " + token);
 
-        sessionManager = new SessionManager(this);
-
-        TextView btnProfile = findViewById(R.id.btnMainProfile);
-        TextView btnLogout = findViewById(R.id.btnMainLogout);
-        Button btnNewChat = findViewById(R.id.btnNewChat);
-        RecyclerView rvConversations = findViewById(R.id.rvConversations);
-
-        conversationList = new ArrayList<>();
-        adapter = new ConversationAdapter(this, conversationList, item -> {
-            Intent intent = new Intent(MainActivity.this, ChatActivity.class);
-            intent.putExtra("CONVERSATION_ID", item.getId());
-            intent.putExtra("OTHER_USER_ID", item.getOtherUserId());
-            intent.putExtra("OTHER_USER_NAME", item.getOtherUserName());
-            intent.putExtra("OTHER_USER_AVATAR", item.getOtherUserAvatar());
-            startActivity(intent);
-        });
-
-        rvConversations.setLayoutManager(new LinearLayoutManager(this));
-        rvConversations.setAdapter(adapter);
-
-        if (btnProfile != null) {
-            btnProfile.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ProfileActivity.class)));
-        }
-        if (btnNewChat != null) {
-            btnNewChat.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ContactsActivity.class)));
-        }
-        if (btnLogout != null) {
-            btnLogout.setOnClickListener(v -> performLogout());
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadConversations();
-    }
-
-    private void loadConversations() {
-        String token = sessionManager.getToken();
-        String currentUserId = sessionManager.getUserId();
-
-        if (token == null) return;
-
-        SupabaseClient.getUserConversations(token, currentUserId, new Callback() {
-            @Override public void onFailure(@NonNull Call call, @NonNull IOException e) {}
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                ResponseBody responseBody = response.body();
-                if (responseBody == null) return;
-                String body = responseBody.string();
-
-                runOnUiThread(() -> {
-                    try {
-                        if (body.startsWith("[")) {
-                            JSONArray array = new JSONArray(body);
-                            conversationList.clear();
-
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject obj = array.getJSONObject(i);
-                                String convId = obj.optString("conversation_id", "");
-
-                                conversationList.add(new Conversation(
-                                        convId,
-                                        "",
-                                        "Chat " + (i + 1),
-                                        "",
-                                        "Toca para abrir chat...",
-                                        "Ahora"
-                                ));
-                            }
-                            adapter.updateList(conversationList);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
-            }
-        });
-    }
-
-    private void performLogout() {
-        String token = sessionManager.getToken();
-        if (token != null) {
-            SupabaseClient.signOut(token, new Callback() {
-                @Override public void onFailure(@NonNull Call call, @NonNull IOException e) { runOnUiThread(() -> clearAndExit()); }
-                @Override public void onResponse(@NonNull Call call, @NonNull Response response) { runOnUiThread(() -> clearAndExit()); }
-            });
+        if ("GET".equals(method)) {
+            b.get();
+        } else if ("DELETE".equals(method)) {
+            b.delete();
         } else {
-            clearAndExit();
+            RequestBody rb = RequestBody.create(body != null ? body : "{}", JSON);
+            b.addHeader("Content-Type", "application/json")
+                    .addHeader("Prefer", "return=representation");
+
+            if ("POST".equals(method)) {
+                b.post(rb);
+            } else if ("PATCH".equals(method)) {
+                b.patch(rb);
+            }
         }
+        client.newCall(b.build()).enqueue(cb);
     }
 
-    private void clearAndExit() {
-        sessionManager.clearSession();
-        Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        finish();
+    // --- HELPER PARA CONSTRUIR JSON ---
+    private static String j(Object... kv) {
+        JSONObject o = new JSONObject();
+        try {
+            for (int i = 0; i < kv.length; i += 2) {
+                o.put(String.valueOf(kv[i]), kv[i + 1]);
+            }
+        } catch (Exception ignored) {}
+        return o.toString();
     }
-}
+
+    // =========================================================================
+    // 1. AUTENTICACIÓN (AUTH)
+    // =========================================================================
+    public static void signIn(String email, String password, Callback cb) {
+        req("POST", "/auth/v1/token?grant_type=password", SUPABASE_KEY, j("email", email, "password", password), cb);
+    }
+
+    public static void signUp(String email, String password, Callback cb) {
+        req("POST", "/auth/v1/signup", SUPABASE_KEY, j("email", email, "password", password), cb);
+    }
+
+    public static void resetPassword(String email, Callback cb) {
+        req("POST", "/auth/v1/recover", SUPABASE_KEY, j("email", email), cb);
+    }
+
+    // =========================================================================
+    // 2. PERFILES DE USUARIO Y PRESENCIA
+    // =========================================================================
+    public static void getProfile(String token, String userId, Callback cb) {
+        req("GET", "/rest/v1/profiles?id=eq." + userId + "&select=*", token, null, cb);
+    }
+
+    public static void updateProfile(String token, String userId, String name, String avatarUrl, Callback cb) {
+        String body = avatarUrl != null
+                ? j("full_name", name, "avatar_url", avatarUrl)
+                : j("full_name", name);
+        req("PATCH", "/rest/v1/profiles?id=eq." + userId, token, body, cb);
+    }
+
+    public static void getUsers(String token, String myId, Callback cb) {
+        req("GET", "/rest/v1/profiles?id=neq." + myId + "&select=*", token, null, cb);
+    }
+
+    public static void searchUsers(String token, String myId, String query, Callback cb) {
+        String eq = Uri.encode(query);
+        req("GET", "/rest/v1/profiles?id=neq." + myId + "&or=(full_name.ilike.*" + eq + "*,email.ilike.*" + eq + "*)&select=*", token, null, cb);
+    }
+
+    public static void getOtherUserStatus(String token, String otherUserId, Callback cb) {
+        req("GET", "/rest/v1/profiles?id=eq." + otherUserId + "&select=*", token, null, cb);
+    }
+
+    public static void updateTypingStatus(String token, String myId, String

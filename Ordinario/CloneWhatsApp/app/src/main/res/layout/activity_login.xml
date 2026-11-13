@@ -6,24 +6,30 @@
     android:orientation="vertical"
     android:padding="28dp"
     android:gravity="center"
-    android:background="@color/kakao_bg">
+    android:background="@color/chiikawa_bg">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_chiikawa_logo"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_login"
-        android:textSize="28sp"
+        android:text="WhatsApp Chiikawa"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="36dp"/>
+        android:textColor="@color/chiikawa_text_dark"
+        android:layout_marginBottom="32dp"/>
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:hint="@string/hint_email"
-        android:textColor="@android:color/black"
-        android:textColorHint="#666666"
+        android:hint="Correo Electrónico"
+        android:textColor="@color/chiikawa_text_dark"
+        android:textColorHint="@color/chiikawa_text_muted"
         android:background="@drawable/bg_rounded_input"
         android:paddingHorizontal="16dp"
         android:inputType="textEmailAddress"
@@ -34,9 +40,9 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:hint="@string/hint_password"
-        android:textColor="@android:color/black"
-        android:textColorHint="#666666"
+        android:hint="Contraseña"
+        android:textColor="@color/chiikawa_text_dark"
+        android:textColorHint="@color/chiikawa_text_muted"
         android:background="@drawable/bg_rounded_input"
         android:paddingHorizontal="16dp"
         android:inputType="textPassword"
@@ -49,7 +55,7 @@
         android:layout_height="46dp"
         android:background="@drawable/bg_button_teal"
         app:backgroundTint="@null"
-        android:text="@string/btn_login"
+        android:text="Iniciar Sesión"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="15sp"/>
@@ -58,8 +64,8 @@
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
-        android:textColor="@android:color/black"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textColor="@color/chiikawa_accent"
         android:layout_marginTop="20dp"
         android:padding="6dp"/>
 
@@ -67,8 +73,8 @@
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_link"
-        android:textColor="@android:color/black"
+        android:text="¿No tienes cuenta? Regístrate aquí"
+        android:textColor="@color/chiikawa_accent"
         android:layout_marginTop="10dp"
         android:padding="6dp"/>
 
